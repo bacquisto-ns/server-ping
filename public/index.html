@@ -8,31 +8,39 @@
     <link rel="stylesheet" href="index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body class="dark-theme">
     <div id="app">
-        <header>
-            <div class="logo">
+        <header class="topbar">
+            <a class="logo" href="index.html" aria-label="NetworkPulse home">
                 <span class="dot"></span>
                 <h1>NetworkPulse</h1>
-            </div>
-            <nav>
+            </a>
+            <nav aria-label="Primary">
+                <a class="nav-link" href="index.html" aria-current="page">Live Demo</a>
                 <a class="nav-link" href="stats.html">Ping Stats</a>
-                <span class="status-badge" id="app-status">Systems Nominal</span>
+                <span class="status-badge" id="app-status">
+                    <span class="status-dot"></span>
+                    <span class="status-label">Systems Nominal</span>
+                </span>
             </nav>
         </header>
 
         <main>
             <section id="hero">
-                <h2 class="animate-up">Global Connectivity Check</h2>
-                <p class="subtitle animate-up delay-1">Lightning-fast latency diagnostics and uptime monitoring.</p>
-                
-                <div class="search-container animate-up delay-2">
-                    <input type="text" id="target-input" placeholder="Enter IP or Hostname (e.g. google.com)" autocomplete="off">
-                    <button id="ping-btn" class="pulse-btn">
-                        <span>PULSE</span>
-                        <div class="glow"></div>
+                <p class="eyebrow animate-up">Real-time diagnostics</p>
+                <h2 class="animate-up delay-1">Global Connectivity Check</h2>
+                <p class="subtitle animate-up delay-2">Lightning-fast latency diagnostics and uptime monitoring, for every corner of the network.</p>
+
+                <div class="search-container animate-up delay-3">
+                    <div class="input-wrap">
+                        <input type="text" id="target-input" placeholder="Enter IP or hostname — e.g. google.com" autocomplete="off" spellcheck="false">
+                        <kbd class="kbd-hint" aria-hidden="true">/</kbd>
+                    </div>
+                    <button id="ping-btn" class="pulse-btn" type="button">
+                        <span class="btn-label">Pulse</span>
+                        <span class="btn-glow" aria-hidden="true"></span>
                     </button>
                 </div>
             </section>
@@ -44,31 +52,43 @@
             </section>
 
             <section id="global-stats">
-                <h3>Global Monitoring</h3>
+                <div class="section-head">
+                    <p class="eyebrow">Always on</p>
+                    <h3>Global Monitoring</h3>
+                </div>
                 <div class="stats-grid">
                     <div class="stat-card" id="google-stat">
                         <div class="stat-header">
-                            <span class="icon">G</span>
+                            <span class="icon" data-icon="google">G</span>
                             <h4>Google DNS</h4>
+                            <span class="live-dot" aria-hidden="true"></span>
                         </div>
                         <div class="stat-value">8.8.8.8</div>
-                        <div class="stat-indicator online">ONLINE</div>
+                        <div class="stat-indicator online">
+                            <span class="pip"></span>Online
+                        </div>
                     </div>
                     <div class="stat-card" id="cloudflare-stat">
                         <div class="stat-header">
-                            <span class="icon">C</span>
+                            <span class="icon" data-icon="cloudflare">C</span>
                             <h4>Cloudflare</h4>
+                            <span class="live-dot" aria-hidden="true"></span>
                         </div>
                         <div class="stat-value">1.1.1.1</div>
-                        <div class="stat-indicator online">ONLINE</div>
+                        <div class="stat-indicator online">
+                            <span class="pip"></span>Online
+                        </div>
                     </div>
                     <div class="stat-card" id="local-stat">
                         <div class="stat-header">
-                            <span class="icon">L</span>
+                            <span class="icon" data-icon="local">L</span>
                             <h4>Gateway</h4>
+                            <span class="live-dot idle" aria-hidden="true"></span>
                         </div>
                         <div class="stat-value">Local Link</div>
-                        <div class="stat-indicator unknown">IDLE</div>
+                        <div class="stat-indicator unknown">
+                            <span class="pip"></span>Idle
+                        </div>
                     </div>
                 </div>
             </section>
