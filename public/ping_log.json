@@ -1,0 +1,10 @@
+[
+  {
+    "timestamp": "2026-04-17T15:37:57.414068Z",
+    "host": "ns-filedecryptor",
+    "status": "online",
+    "latency_avg_ms": 0,
+    "packet_loss_pct": 0,
+    "resolved_ip": "fe80::fd55:fe4b:3d37:7528%12"
+  }
+]
