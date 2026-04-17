@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Pulse | Premium Network Diagnostics</title>
+    <meta name="description" content="A beautiful and powerful network ping utility to monitor host availability and latency.">
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body class="dark-theme">
+    <div id="app">
+        <header>
+            <div class="logo">
+                <span class="dot"></span>
+                <h1>NetworkPulse</h1>
+            </div>
+            <nav>
+                <a class="nav-link" href="stats.html">Ping Stats</a>
+                <span class="status-badge" id="app-status">Systems Nominal</span>
+            </nav>
+        </header>
+
+        <main>
+            <section id="hero">
+                <h2 class="animate-up">Global Connectivity Check</h2>
+                <p class="subtitle animate-up delay-1">Lightning-fast latency diagnostics and uptime monitoring.</p>
+                
+                <div class="search-container animate-up delay-2">
+                    <input type="text" id="target-input" placeholder="Enter IP or Hostname (e.g. google.com)" autocomplete="off">
+                    <button id="ping-btn" class="pulse-btn">
+                        <span>PULSE</span>
+                        <div class="glow"></div>
+                    </button>
+                </div>
+            </section>
+
+            <section id="results-section">
+                <div id="active-pings" class="results-grid">
+                    <!-- Results will be injected here -->
+                </div>
+            </section>
+
+            <section id="global-stats">
+                <h3>Global Monitoring</h3>
+                <div class="stats-grid">
+                    <div class="stat-card" id="google-stat">
+                        <div class="stat-header">
+                            <span class="icon">G</span>
+                            <h4>Google DNS</h4>
+                        </div>
+                        <div class="stat-value">8.8.8.8</div>
+                        <div class="stat-indicator online">ONLINE</div>
+                    </div>
+                    <div class="stat-card" id="cloudflare-stat">
+                        <div class="stat-header">
+                            <span class="icon">C</span>
+                            <h4>Cloudflare</h4>
+                        </div>
+                        <div class="stat-value">1.1.1.1</div>
+                        <div class="stat-indicator online">ONLINE</div>
+                    </div>
+                    <div class="stat-card" id="local-stat">
+                        <div class="stat-header">
+                            <span class="icon">L</span>
+                            <h4>Gateway</h4>
+                        </div>
+                        <div class="stat-value">Local Link</div>
+                        <div class="stat-indicator unknown">IDLE</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 NetworkPulse Diagnostics. Built with precision.</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
