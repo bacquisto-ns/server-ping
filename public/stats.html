@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Pulse | Ping Statistics</title>
+    <meta name="description" content="Review historical ping statistics in a responsive table and summary dashboard.">
+    <link rel="stylesheet" href="stats.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-shell">
+        <header class="topbar">
+            <a class="brand" href="index.html" aria-label="Return to NetworkPulse home">
+                <span class="dot"></span>
+                <span>NetworkPulse</span>
+            </a>
+            <nav class="topnav" aria-label="Primary">
+                <a href="index.html">Live Demo</a>
+                <a href="stats.html" aria-current="page">Ping Stats</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="hero-copy">
+                    <p class="eyebrow">Historical Diagnostics</p>
+                    <h1>Ping activity, organized for quick scanning.</h1>
+                    <p class="hero-text">
+                        This view reads the latest entries from <code>ping_log.json</code> and turns them
+                        into a summary strip plus a responsive activity table.
+                    </p>
+                </div>
+                <div class="hero-panel">
+                    <p class="panel-label">Dataset</p>
+                    <p class="panel-value" id="dataset-status">Loading log data</p>
+                    <p class="panel-meta" id="dataset-meta">Fetching the latest ping records...</p>
+                </div>
+            </section>
+
+            <section class="summary-grid" aria-label="Ping summary">
+                <article class="summary-card">
+                    <p class="summary-label">Total Checks</p>
+                    <p class="summary-value" id="total-checks">--</p>
+                </article>
+                <article class="summary-card">
+                    <p class="summary-label">Hosts Seen</p>
+                    <p class="summary-value" id="hosts-seen">--</p>
+                </article>
+                <article class="summary-card">
+                    <p class="summary-label">Average Latency</p>
+                    <p class="summary-value" id="avg-latency">--</p>
+                </article>
+                <article class="summary-card">
+                    <p class="summary-label">Packet Loss</p>
+                    <p class="summary-value" id="avg-loss">--</p>
+                </article>
+            </section>
+
+            <section class="table-shell animate-up">
+                <div class="table-header">
+                    <div>
+                        <p class="eyebrow">Detailed Log</p>
+                        <h2>Recorded ping results</h2>
+                    </div>
+                    <p class="table-caption">Newest entries appear first.</p>
+                </div>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">Timestamp</th>
+                                <th scope="col">Host</th>
+                                <th scope="col">Resolved IP</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Avg Latency</th>
+                                <th scope="col">Packet Loss</th>
+                            </tr>
+                        </thead>
+                        <tbody id="stats-table-body">
+                            <tr>
+                                <td colspan="6" class="empty-state">Loading ping records...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="stats.js"></script>
+</body>
+</html>
